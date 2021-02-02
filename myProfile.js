@@ -9,23 +9,47 @@ window.addEventListener("DOMContentLoaded", event => {
     list.setAttribute("id", "list");
     document.body.appendChild(list);
 
-    let listItem1 = document.createElement("li");
-    let listItem1Content = document.createTextNode("This is list item 1");
-    listItem1.appendChild(listItem1Content);
-    list.appendChild(listItem1);
+    let detailsArr = [
+        "<li>This is list item 1</li>",
+        "<li>This is list item 2</li>",
+        "<li>This is list item 3</li>",
+        "<li>This is list item 4</li>"
+    ];
+
+    let liString = detailsArr.join(' ');
+    list.innerHTML = liString
     
-    let listItem2 = document.createElement("li");
-    let listItem2Content = document.createTextNode("This is list item 2");
-    listItem2.appendChild(listItem2Content);
-    list.appendChild(listItem2);
+    list.setAttribute("class", "my-details");
+    h1.setAttribute("class", "name");
+    let lis = document.querySelectorAll("li");
+    lis.forEach(li => li.setAttribute("class", "detail"));
+    
+    
+    
+    
+    
+    // let listElement = document.getElementById('list');
+    // list.innerHTML = liString
+    // listElement.innerHTML = liString
+    // let listItem1 = document.createElement("li");
+    // let listItem1Content = document.createTextNode("This is list item 1");
+    // listItem1.appendChild(listItem1Content);
+    // list.appendChild(listItem1);
+    
+    // let listItem2 = document.createElement("li");
+    // let listItem2Content = document.createTextNode("This is list item 2");
+    // listItem2.appendChild(listItem2Content);
+    // list.appendChild(listItem2);
 
-    let listItem3 = document.createElement("li");
-    let listItem3Content = document.createTextNode("This is list item 3");
-    listItem3.appendChild(listItem3Content);
-    list.appendChild(listItem3);
+    // let listItem3 = document.createElement("li");
+    // let listItem3Content = document.createTextNode("This is list item 3");
+    // listItem3.appendChild(listItem3Content);
+    // list.appendChild(listItem3);
 
-    let listItem4 = document.createElement("li");
-    let listItem4Content = document.createTextNode("This is list item 4");
-    listItem4.appendChild(listItem4Content);
-    list.appendChild(listItem4);
+    // let listItem4 = document.createElement("li");
+    // let listItem4Content = document.createTextNode("This is list item 4");
+    // listItem4.appendChild(listItem4Content);
+    // list.appendChild(listItem4);
+
+
 });

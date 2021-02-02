@@ -1,4 +1,7 @@
 window.addEventListener("DOMContentLoaded", event => {
+    let background = document.createElement()
+    
+    
     let h1 = document.createElement("h1");
     h1.setAttribute("id", "h1");
     let name = document.createTextNode("owen stetzer");
@@ -7,15 +10,7 @@ window.addEventListener("DOMContentLoaded", event => {
 
     let title = document.createElement("title");
     document.body.appendChild(title);
-    let time = () => {
-        let date = new Date();
-        let seconds = date.getSeconds();
-        let minutes = date.getMinutes();
-        let hours = date.getHours();
-        title.innerText = `${hours}:${minutes}:${seconds}`;
-    }
-    setInterval(time(), 1000);
-
+    
     let list = document.createElement("ul");
     list.setAttribute("id", "list");
     document.body.appendChild(list);
@@ -24,11 +19,28 @@ window.addEventListener("DOMContentLoaded", event => {
         "<li>This is list item 1</li>",
         "<li>This is list item 2</li>",
         "<li>This is list item 3</li>",
-        "<li>This is list item 4</li>"
+        "<li>This is list item 4</li>",
+        `<li id = "clock"></li>`
     ];
-
+    
     let liString = detailsArr.join(' ');
     list.innerHTML = liString
+
+    let clockItem = document.getElementById("clock");
+    
+    let seconds;
+    let minutes; 
+    let hours;
+    let time = () => {
+        let date = new Date();
+        seconds = date.getSeconds();
+        minutes = date.getMinutes();
+        hours = date.getHours();
+        title.innerText = `${hours}:${minutes}:${seconds}`;
+        clockItem.innerText = `I live in Atlanta, GA, and it's currently ${hours}:${minutes}:${seconds}`
+    }
+    setInterval(time, 1000);
+
     
     list.setAttribute("class", "my-details");
     h1.setAttribute("class", "name");

@@ -5,6 +5,17 @@ window.addEventListener("DOMContentLoaded", event => {
     h1.appendChild(name);
     document.body.appendChild(h1);
 
+    let title = document.createElement("title");
+    document.body.appendChild(title);
+    let time = () => {
+        let date = new Date();
+        let seconds = date.getSeconds();
+        let minutes = date.getMinutes();
+        let hours = date.getHours();
+        title.innerText = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(time(), 1000);
+
     let list = document.createElement("ul");
     list.setAttribute("id", "list");
     document.body.appendChild(list);
@@ -23,6 +34,8 @@ window.addEventListener("DOMContentLoaded", event => {
     h1.setAttribute("class", "name");
     let lis = document.querySelectorAll("li");
     lis.forEach(li => li.setAttribute("class", "detail"));
+
+    
     
     
     
